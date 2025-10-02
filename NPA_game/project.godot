@@ -14,6 +14,12 @@ config/name="scrap-raider"
 run/main_scene="uid://bsqsey6ajq75r"
 config/features=PackedStringArray("4.5", "Mobile")
 
+[display]
+
+window/size/viewport_width=2400
+window/size/viewport_height=1080
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"

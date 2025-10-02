@@ -28,11 +28,11 @@ func generate_points(radius: float, region_size: Vector2i, max_samples: int = 30
 		var found = false
 		
 		for i in range(max_samples):
-			var angle = randf() * radius
+			var angle = randf() * TAU 
 			var r = radius + randf() * radius
 			var new_point = point + Vector2(cos(angle), sin(angle)) * r
 			
-			if new_point.x >= 0 and new_point.x < region_size and new_point.y >= 0 and new_point.y < region_size:
+			if new_point.x >= 0 and new_point.x < region_size.x and new_point.y >= 0 and new_point.y < region_size.y:
 				var cell = Vector2i(int(new_point.x / cell_size), int(new_point.y / cell_size))
 				
 				if cell.x >= 0 and cell.x < grid_width and cell.y >= 0 and cell.y < grid_height:
@@ -41,7 +41,7 @@ func generate_points(radius: float, region_size: Vector2i, max_samples: int = 30
 						for dy in range(-2, 3):
 							var neighbour_x = cell.x + dx
 							var neighbour_y = cell.y + dy
-							if neighbour_x >= 0 and neighbour_x < grid_width and neighbour_y >= 0 and neighbour_y < grid_width:
+							if neighbour_x >= 0 and neighbour_x < grid_width and neighbour_y >= 0 and neighbour_y < grid_height:
 								var neighbour = grid[neighbour_x][neighbour_y]
 								if neighbour != null and new_point.distance_to(neighbour) < radius:
 									valid = false
