@@ -10,9 +10,9 @@ var room_generator = RoomGenerator.new()
 # enums & consts
 enum room {
 	MIN_WIDTH = 3,
-	MAX_WIDTH = 6,
+	MAX_WIDTH = 10,
 	MIN_HEIGHT = 3,
-	MAX_HEIGHT = 7,
+	MAX_HEIGHT = 10,
 }
 enum gen {
 	PADDING = 1,
@@ -50,8 +50,8 @@ func generate_dungeon():
 	for tile in occupied.keys():
 		tile_map_layer.set_cell(tile, 1, Vector2i(0, 0))
 	
-	display_points(points, 0)
-	display_points(room_centers, 2)
+	#display_points(points, 0)
+	#display_points(room_centers, 2)
 
 func display_points(points, source_id):
 	var tile_size = Vector2i(gen.TILESIZE, gen.TILESIZE)

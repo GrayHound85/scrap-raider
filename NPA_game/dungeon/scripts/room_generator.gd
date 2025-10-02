@@ -15,8 +15,8 @@ func generate_rooms(points: Array, room, gen):
 		for i in range(points_copy.size() - 1, -1, -1):
 			var point = points_copy[i]
 			var padding =  gen.PADDING * 2
-			var room_w = randi_range(room.MIN_WIDTH + padding, room.MAX_WIDTH + padding)
-			var room_h = randi_range(room.MIN_HEIGHT + padding, room.MAX_HEIGHT + padding)
+			var room_w = randi_range(room.MIN_WIDTH, room.MAX_WIDTH)
+			var room_h = randi_range(room.MIN_HEIGHT, room.MAX_HEIGHT)
 			
 			var tile_coord = Vector2i(
 				int(round(point.x / gen.TILESIZE)),
