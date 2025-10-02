@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="scrap-raider"
-run/main_scene="uid://uyqdmuufpyh3"
+run/main_scene="uid://bsqsey6ajq75r"
 config/features=PackedStringArray("4.5", "Mobile")
 
 [rendering]
