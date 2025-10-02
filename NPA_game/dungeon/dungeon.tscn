@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bsqsey6ajq75r"]
 
-[ext_resource type="Script" uid="uid://byqwyfvj868aw" path="res://dungeon/dungeon.gd" id="1_6elmv"]
+[ext_resource type="Script" uid="uid://byqwyfvj868aw" path="res://dungeon/scripts/dungeon.gd" id="1_6elmv"]
 [ext_resource type="TileSet" uid="uid://b656e3oclr3tg" path="res://dungeon/assets/tilemap/enviroment_tiles.tres" id="2_d7mhw"]
 
 [node name="Node2D" type="Node2D"]
@@ -10,5 +10,5 @@ script = ExtResource("1_6elmv")
 tile_set = ExtResource("2_d7mhw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(417, 323)
+position = Vector2(1057, 862)
 zoom = Vector2(0.6, 0.6)
