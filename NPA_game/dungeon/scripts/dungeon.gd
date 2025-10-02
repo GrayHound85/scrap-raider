@@ -25,6 +25,11 @@ enum gen {
 
 
 func _ready() -> void:
+	generate_dungeon()
+
+func generate_dungeon():
+	tile_map_layer.clear()
+	
 	if not tile_map_layer:
 		push_error("TileMapLayer node not found!")
 		return
@@ -37,14 +42,18 @@ func _ready() -> void:
 	var radius = gen.TILESIZE * gen.DENSITY + gen.PADDING
 	var points = poisson.generate_points(radius, region_size, gen.K)
 	
-	var occupied: Dictionary = room_generator.generate_rooms(points, room, gen)
+	var rooms_data = room_generator.generate_rooms(points, room, gen)
+	var occupied: Dictionary = rooms_data[0]
+	var room_centers: Array = rooms_data[1]
 
 
 	for tile in occupied.keys():
 		tile_map_layer.set_cell(tile, 1, Vector2i(0, 0))
+	
+	display_points(points, 0)
+	display_points(room_centers, 2)
 
-	# Creates tile at position of points
-	print(points)
+func display_points(points, source_id):
 	var tile_size = Vector2i(gen.TILESIZE, gen.TILESIZE)
 	for point in points:
 		var tile_coord = Vector2i(
@@ -52,4 +61,9 @@ func _ready() -> void:
 			int(point.y / tile_size.y)
 		)
 		if tile_coord.x >= 0 and tile_coord.x < gen.WIDTH and tile_coord.y >= 0 and tile_coord.y < gen.HEIGHT:
-			tile_map_layer.set_cell(tile_coord, 0, Vector2i(0, 0))
+			tile_map_layer.set_cell(tile_coord, source_id, Vector2i(0, 0))
+
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("debug_menu"):
+		generate_dungeon()

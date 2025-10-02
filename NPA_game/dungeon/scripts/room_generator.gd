@@ -5,9 +5,11 @@ class_name RoomGenerator
 # Variables
 var occupied := {}
 var tile: int = 0
-var max_failed_attempts := 3
 
 func generate_rooms(points: Array, room, gen):
+	occupied = {}
+	var room_centers = []
+	var max_failed_attempts = 3
 	var points_copy = points.duplicate()
 	while points_copy.size() > 0 and max_failed_attempts > 0:
 		for i in range(points_copy.size() - 1, -1, -1):
@@ -29,12 +31,13 @@ func generate_rooms(points: Array, room, gen):
 					for y in range(room_h):
 						var coord = top_left + Vector2i(x,y)
 						occupied[coord] = tile
+				room_centers.append(point)
 				points_copy.remove_at(i)
 				max_failed_attempts = 3
 			else:
 				max_failed_attempts -= 1
 	
-	return occupied
+	return [occupied, room_centers]
 
 
 func can_place_room(top_left: Vector2i, w: int, h: int):
