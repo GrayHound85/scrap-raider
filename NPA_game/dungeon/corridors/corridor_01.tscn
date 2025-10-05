@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://otnsniu1gem6"]
+
+[ext_resource type="TileSet" uid="uid://b656e3oclr3tg" path="res://dungeon/assets/tilemap/floor_tiles.tres" id="1_cfhg0"]
+
+[node name="Corridor_01" type="Node2D"]
+
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("1_cfhg0")
+
+[node name="Walls" type="TileMapLayer" parent="."]

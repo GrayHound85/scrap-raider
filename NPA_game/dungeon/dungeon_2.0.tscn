@@ -1,10 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwrgqex05ljdc"]
+[gd_scene load_steps=3 format=3 uid="uid://bwrgqex05ljdc"]
 
-[ext_resource type="PackedScene" uid="uid://dg31n7l1ca422" path="res://dungeon/template_room.tscn" id="1_fpp86"]
+[ext_resource type="PackedScene" uid="uid://cxhjnl13cjieq" path="res://dungeon/rooms/special_rooms/start_room_01.tscn" id="1_fpp86"]
+[ext_resource type="PackedScene" uid="uid://dtgr2tadcp5f" path="res://player.tscn" id="2_1b30c"]
 
 [node name="dungeon_02" type="Node2D"]
 
 [node name="TemplateRoom" parent="." instance=ExtResource("1_fpp86")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+[node name="Node2D" parent="." instance=ExtResource("2_1b30c")]

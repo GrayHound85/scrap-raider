@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=4 uid="uid://cxhjnl13cjieq"]
+
+[ext_resource type="Script" uid="uid://nox2m5a0f3lo" path="res://dungeon/scripts/room_data.gd" id="1_sm2wj"]
+[ext_resource type="TileSet" uid="uid://b656e3oclr3tg" path="res://dungeon/assets/tilemap/floor_tiles.tres" id="2_3xnnd"]
+[ext_resource type="TileSet" uid="uid://cim3jn68nf42w" path="res://dungeon/assets/tilemap/spawn_points.tres" id="3_i6kb4"]
+
+[node name="TemplateRoom" type="Node2D"]
+script = ExtResource("1_sm2wj")
+
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAAAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAAMAAAAAAAAAAAACAAQAAAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAFAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAADAAYAAAAAAAAAAAACAAYAAAAAAAAAAAABAAYAAAAAAAAAAAA=")
+tile_set = ExtResource("2_3xnnd")
+
+[node name="Walls" type="TileMapLayer" parent="."]
+
+[node name="Doors" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wMAAAAAAAAAAAADAP//AAAAAAAAAAAHAAMAAAAAAAAAAAADAAcAAAAAAAAAAAA=")
+tile_set = ExtResource("3_i6kb4")
+
+[node name="EnemySpawns" type="TileMapLayer" parent="."]
+tile_set = ExtResource("3_i6kb4")
+
+[node name="LootSpawns" type="TileMapLayer" parent="."]
+tile_set = ExtResource("3_i6kb4")

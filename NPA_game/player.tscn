@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtgr2tadcp5f"]
+
+[ext_resource type="Script" uid="uid://dopwqlpit8amh" path="res://player.gd" id="1_4flbx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sh265"]
+
+[node name="Node2D" type="CharacterBody2D"]
+script = ExtResource("1_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sh265")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.125, 0.12500048)
+scale = Vector2(14.25, 13.750001)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
