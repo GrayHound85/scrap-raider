@@ -1,21 +1,21 @@
 [gd_resource type="TileSet" load_steps=7 format=3 uid="uid://b656e3oclr3tg"]
 
-[ext_resource type="Texture2D" uid="uid://cwbjvdw45d7er" path="res://dungeon/assets/tilemap/Enviroment_floor_tile_1.png" id="1_r1och"]
-[ext_resource type="Texture2D" uid="uid://d0rb0gnhf2rdd" path="res://dungeon/assets/tilemap/Enviroment_floor_tile_2.png" id="2_4cknb"]
-[ext_resource type="Texture2D" uid="uid://cdbvveec0laor" path="res://dungeon/assets/tilemap/Enviroment_floor_tile_3.png" id="3_dxnep"]
+[ext_resource type="Texture2D" uid="uid://cwbjvdw45d7er" path="res://dungeon/assets/tilemap/Enviroment_floor_tile_1.png" id="1_5h3wg"]
+[ext_resource type="Texture2D" uid="uid://d0rb0gnhf2rdd" path="res://dungeon/assets/tilemap/Enviroment_floor_tile_2.png" id="2_nop3w"]
+[ext_resource type="Texture2D" uid="uid://cdbvveec0laor" path="res://dungeon/assets/tilemap/Enviroment_floor_tile_3.png" id="3_w80fu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rjdts"]
-texture = ExtResource("1_r1och")
+texture = ExtResource("1_5h3wg")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tqxl6"]
-texture = ExtResource("2_4cknb")
+texture = ExtResource("2_nop3w")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xc2s7"]
-texture = ExtResource("3_dxnep")
+texture = ExtResource("3_w80fu")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 

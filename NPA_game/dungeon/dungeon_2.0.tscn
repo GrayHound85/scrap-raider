@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://5jau302m0hkk"]
+[gd_scene load_steps=2 format=3 uid="uid://bwrgqex05ljdc"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://dg31n7l1ca422" path="res://dungeon/template_room.tscn" id="1_fpp86"]
+
+[node name="dungeon_02" type="Node2D"]
+
+[node name="TemplateRoom" parent="." instance=ExtResource("1_fpp86")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
