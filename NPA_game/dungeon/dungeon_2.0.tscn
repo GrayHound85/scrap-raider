@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwrgqex05ljdc"]
+[gd_scene load_steps=8 format=3 uid="uid://bwrgqex05ljdc"]
 
 [ext_resource type="Script" uid="uid://b08sqd8u5po2i" path="res://dungeon/scripts/dungeon_2.0.gd" id="1_6bnvv"]
 [ext_resource type="PackedScene" uid="uid://cxhjnl13cjieq" path="res://dungeon/rooms/special_rooms/start_room_01.tscn" id="1_fpp86"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://pdqgl5se8b3e" path="res://dungeon/rooms/normal_rooms/room_01.tscn" id="2_muhwk"]
 [ext_resource type="PackedScene" uid="uid://ci64g5i8tj32n" path="res://dungeon/rooms/normal_rooms/room_02.tscn" id="3_bo7df"]
 [ext_resource type="PackedScene" uid="uid://yyswdkxsuwfp" path="res://debug/debug_hud.tscn" id="4_bo7df"]
+[ext_resource type="TileSet" uid="uid://b656e3oclr3tg" path="res://dungeon/assets/tilemap/floor_tiles.tres" id="7_pqcbx"]
 
 [node name="dungeon_02" type="Node2D"]
 script = ExtResource("1_6bnvv")
@@ -16,3 +17,6 @@ room_pool = Array[PackedScene]([ExtResource("2_muhwk"), ExtResource("3_bo7df")])
 [node name="Node2D" parent="." instance=ExtResource("2_1b30c")]
 
 [node name="DebugHUD" parent="." instance=ExtResource("4_bo7df")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("7_pqcbx")
