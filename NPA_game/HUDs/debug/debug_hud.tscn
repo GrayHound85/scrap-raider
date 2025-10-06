@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=3 uid="uid://yyswdkxsuwfp"]
+
+[ext_resource type="Script" uid="uid://b24awlk3i2bjb" path="res://HUDs/debug/debug_menu.gd" id="1_o24yp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i1w4r"]
+draw_center = false
+border_width_top = 4
+border_color = Color(0.21176471, 0.21176471, 0.21176471, 0.85882354)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_267qd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iovvk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8uub4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hakna"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ukr1u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8twqd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i1w4r"]
+
+[node name="DebugHUD" type="CanvasLayer"]
+script = ExtResource("1_o24yp")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 340.0
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="FPSLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "FPS: "
+vertical_alignment = 1
+
+[node name="TileCoordLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Tile: (0, 0)"
+vertical_alignment = 1
+
+[node name="Control" type="Panel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_i1w4r")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Control/MarginContainer"]
+layout_mode = 2
+
+[node name="ToggleDoorPoints" type="CheckButton" parent="MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_267qd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iovvk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8uub4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_hakna")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ukr1u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8twqd")
+text = "Door points"
+
+[node name="ToggleLootSpawns" type="CheckButton" parent="MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_267qd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iovvk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8uub4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_hakna")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ukr1u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8twqd")
+text = "Loots spawns"
+
+[node name="ToggleEnemySpawns" type="CheckButton" parent="MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_267qd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iovvk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8uub4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_hakna")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ukr1u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8twqd")
+text = "Enemy spawns"
+
+[node name="AdvancedToggle" type="CheckButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i1w4r")
+button_pressed = true
+text = "Advanced"
+
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer/ToggleDoorPoints" to="." method="_on_toggle_door_points_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer/ToggleLootSpawns" to="." method="_on_toggle_loot_spawns_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer/ToggleEnemySpawns" to="." method="_on_toggle_enemy_spawns_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/AdvancedToggle" to="." method="_on_advanced_toggle_toggled"]

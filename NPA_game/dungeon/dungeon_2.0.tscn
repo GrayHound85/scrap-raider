@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dtgr2tadcp5f" path="res://player.tscn" id="2_1b30c"]
 [ext_resource type="PackedScene" uid="uid://pdqgl5se8b3e" path="res://dungeon/rooms/normal_rooms/room_01.tscn" id="2_muhwk"]
 [ext_resource type="PackedScene" uid="uid://ci64g5i8tj32n" path="res://dungeon/rooms/normal_rooms/room_02.tscn" id="3_bo7df"]
-[ext_resource type="PackedScene" uid="uid://yyswdkxsuwfp" path="res://debug/debug_hud.tscn" id="4_bo7df"]
+[ext_resource type="PackedScene" uid="uid://yyswdkxsuwfp" path="res://HUDs/debug/debug_hud.tscn" id="4_bo7df"]
 [ext_resource type="TileSet" uid="uid://b656e3oclr3tg" path="res://dungeon/assets/tilemap/floor_tiles.tres" id="7_pqcbx"]
 
 [node name="dungeon_02" type="Node2D"]

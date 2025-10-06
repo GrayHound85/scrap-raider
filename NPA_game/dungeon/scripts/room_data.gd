@@ -5,6 +5,10 @@ class_name Room
 @export var can_spawn_enemies: bool = true
 @onready var floor: TileMapLayer = $Floor
 
+@onready var doors = $Doors
+@onready var loot = $LootSpawns
+@onready var enemies = $EnemySpawns
+
 var door_points: Array[Vector2i]
 var loot_points: Array[Vector2i]
 var enemy_points: Array[Vector2i]
@@ -13,9 +17,7 @@ var used_doors: Array[Vector2i]
 const INVALID_DOOR := Vector2i(-9999, -9999)
 
 func _ready() -> void:
-	var doors = $Doors
-	var loot = $LootSpawns
-	var enemies = $EnemySpawns
+	add_to_group("rooms")
 	
 	for pos in doors.get_used_cells():
 		door_points.append(pos)
@@ -28,11 +30,30 @@ func _ready() -> void:
 	
 	hide_markers()
 
+# Debug overlay toggle ----------
+func toggle_door_points():
+	if doors.visible == true:
+		doors.visible = false
+	else:
+		doors.visible = true
 
+func toggle_loot_spawns():
+	if loot.visible == true:
+		loot.visible = false
+	else:
+		loot.visible = true
+		
+func toggle_enemy_spawns():
+	if enemies.visible == true:
+		enemies.visible = false
+	else:
+		enemies.visible = true
+
+# -------------------------------
 func hide_markers():
-	$Doors.visible = false
-	$LootSpawns.visible = false
-	$EnemySpawns.visible = false
+	doors.visible = false
+	loot.visible = false
+	enemies.visible = false
 
 
 func get_random_valid_door() -> Dictionary:

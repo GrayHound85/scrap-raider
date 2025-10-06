@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtgr2tadcp5f"]
+[gd_scene load_steps=4 format=3 uid="uid://dtgr2tadcp5f"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dopwqlpit8amh" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://d2a8bic4f5rv8" path="res://HUDs/main_hud.tscn" id="2_onrkg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sh265"]
 
@@ -16,3 +17,5 @@ scale = Vector2(14.25, 13.750001)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
+
+[node name="MainHUD" parent="." instance=ExtResource("2_onrkg")]

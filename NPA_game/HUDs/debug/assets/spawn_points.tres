@@ -1,21 +1,21 @@
 [gd_resource type="TileSet" load_steps=7 format=3 uid="uid://cim3jn68nf42w"]
 
-[ext_resource type="Texture2D" uid="uid://2g8d8xy08ord" path="res://dungeon/assets/tilemap/door_marker.png" id="1_teamo"]
-[ext_resource type="Texture2D" uid="uid://cswt0db8rg6dk" path="res://dungeon/assets/tilemap/loot_marker.png" id="2_h5opd"]
-[ext_resource type="Texture2D" uid="uid://cxptr6cuad2mt" path="res://dungeon/assets/tilemap/enemy_marker.png" id="3_4opm6"]
+[ext_resource type="Texture2D" uid="uid://2g8d8xy08ord" path="res://HUDs/debug/assets/door_marker.png" id="1_oeew8"]
+[ext_resource type="Texture2D" uid="uid://cswt0db8rg6dk" path="res://HUDs/debug/assets/loot_marker.png" id="2_7hk5n"]
+[ext_resource type="Texture2D" uid="uid://cxptr6cuad2mt" path="res://HUDs/debug/assets/enemy_marker.png" id="3_ceid3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kfekv"]
-texture = ExtResource("1_teamo")
+texture = ExtResource("1_oeew8")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fmjo0"]
-texture = ExtResource("2_h5opd")
+texture = ExtResource("2_7hk5n")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fh6gy"]
-texture = ExtResource("3_4opm6")
+texture = ExtResource("3_ceid3")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 

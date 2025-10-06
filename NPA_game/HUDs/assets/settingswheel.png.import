@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2g8d8xy08ord"
-path="res://.godot/imported/door_marker.png-43bac241a0d9438cc9f8d24da5d3e75b.ctex"
+uid="uid://cgdiw0seajeg4"
+path="res://.godot/imported/settingswheel.png-b33d5e51d993ac00b84e5dbd98d8a1bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dungeon/assets/tilemap/door_marker.png"
-dest_files=["res://.godot/imported/door_marker.png-43bac241a0d9438cc9f8d24da5d3e75b.ctex"]
+source_file="res://HUDs/assets/settingswheel.png"
+dest_files=["res://.godot/imported/settingswheel.png-b33d5e51d993ac00b84e5dbd98d8a1bf.ctex"]
 
 [params]
 

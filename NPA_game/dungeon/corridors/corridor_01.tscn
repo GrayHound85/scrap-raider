@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bwnypygm5jshc" path="res://dungeon/corridors/corridor_data.gd" id="1_2b7yf"]
 [ext_resource type="TileSet" uid="uid://b656e3oclr3tg" path="res://dungeon/assets/tilemap/floor_tiles.tres" id="1_cfhg0"]
-[ext_resource type="TileSet" uid="uid://cim3jn68nf42w" path="res://dungeon/assets/tilemap/spawn_points.tres" id="2_hmm2k"]
+[ext_resource type="TileSet" uid="uid://cim3jn68nf42w" path="res://HUDs/debug/assets/spawn_points.tres" id="2_hmm2k"]
 
 [node name="Corridor_01" type="Node2D"]
 script = ExtResource("1_2b7yf")

@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2a8bic4f5rv8"]
+
+[ext_resource type="Texture2D" uid="uid://cgdiw0seajeg4" path="res://HUDs/assets/settingswheel.png" id="1_gxgn3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gxgn3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wtn8d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pm1he"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_313uk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gns6x"]
+
+[node name="MainHUD" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Control" type="Control" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+texture = ExtResource("1_gxgn3")
+
+[node name="Button" type="Button" parent="MarginContainer/Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gxgn3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wtn8d")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pm1he")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_313uk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gns6x")

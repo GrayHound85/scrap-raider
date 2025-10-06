@@ -5,9 +5,10 @@ extends Node2D
 @export var tile_size: Vector2 = Vector2(32, 32)
 @export var max_rooms: int = 10
 
+
 var rooms: Array[Room]
 
 func _ready() -> void:
-	pass
+	print(start_room.get_random_valid_door())
 	
 	
