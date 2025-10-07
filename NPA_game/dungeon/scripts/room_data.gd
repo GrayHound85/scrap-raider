@@ -54,7 +54,35 @@ func hide_markers():
 	doors.visible = false
 	loot.visible = false
 	enemies.visible = false
+	
 
+func get_connecting_door(direction) -> Dictionary:
+	var options = []
+	var picked_options: Array[Dictionary]
+	
+	for d in door_points:
+		if not used_doors.has(d):
+			options.append(d)
+	
+	if options.size() > 0:
+		var door_pos = INVALID_DOOR
+		if Vector2i(door_pos.x + 1, door_pos.y) in floor.get_used_cells():
+			direction = Vector2i(-1, 0)
+		elif Vector2i(door_pos.x - 1, door_pos.y) in floor.get_used_cells():
+			direction = Vector2i(1, 0)
+		elif  Vector2i(door_pos.x, door_pos.y - 1) in floor.get_used_cells():
+			direction = Vector2i(0, 1)
+		elif  Vector2i(door_pos.x, door_pos.y + 1) in floor.get_used_cells():
+			direction = Vector2i(0, -1)
+		else:
+			direction = INVALID_DOOR
+		
+		var picked = {door_pos: direction}
+		
+	else:
+		var picked = {INVALID_DOOR: direction}
+	picked_options.append(picked)
+	return picked
 
 func get_random_valid_door() -> Dictionary:
 	var options = []
@@ -66,6 +94,7 @@ func get_random_valid_door() -> Dictionary:
 	
 	if options.size() > 0:
 		var door_pos = options.pick_random()
+		used_doors.append(door_pos)
 		if Vector2i(door_pos.x + 1, door_pos.y) in floor.get_used_cells():
 			direction = Vector2i(-1, 0)
 		elif Vector2i(door_pos.x - 1, door_pos.y) in floor.get_used_cells():

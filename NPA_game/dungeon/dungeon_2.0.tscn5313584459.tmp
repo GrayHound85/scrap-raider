@@ -15,7 +15,6 @@ rooms = Array[PackedScene]([ExtResource("2_muhwk"), ExtResource("3_bo7df")])
 corridors = Array[PackedScene]([ExtResource("4_gfh1l")])
 
 [node name="StartRoom" parent="." instance=ExtResource("1_fpp86")]
-room_name = null
 
 [node name="Rooms" type="Node2D" parent="."]
 

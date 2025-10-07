@@ -4,6 +4,7 @@ class_name Corridor
 var door_points: Array[Vector2i]
 
 func _ready() -> void:
+	add_to_group("corridors")
 	var doors = $Doors
 	
 	for pos in doors.get_used_cells():
