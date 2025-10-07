@@ -66,14 +66,16 @@ func get_random_valid_door() -> Dictionary:
 	
 	if options.size() > 0:
 		var door_pos = options.pick_random()
-		if (door_pos.x + 1) in floor.get_used_cells():
-			direction = Vector2i(1, 0)
-		elif (door_pos.x - 1) in floor.get_used_cells():
+		if Vector2i(door_pos.x + 1, door_pos.y) in floor.get_used_cells():
 			direction = Vector2i(-1, 0)
-		elif (door_pos.y + 1) in floor.get_used_cells():
+		elif Vector2i(door_pos.x - 1, door_pos.y) in floor.get_used_cells():
+			direction = Vector2i(1, 0)
+		elif  Vector2i(door_pos.x, door_pos.y - 1) in floor.get_used_cells():
 			direction = Vector2i(0, 1)
-		else:
+		elif  Vector2i(door_pos.x, door_pos.y + 1) in floor.get_used_cells():
 			direction = Vector2i(0, -1)
+		else:
+			direction = INVALID_DOOR
 		
 		picked[door_pos] = direction
 	else:
