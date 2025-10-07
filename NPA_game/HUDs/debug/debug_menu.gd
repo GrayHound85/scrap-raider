@@ -1,5 +1,5 @@
 extends CanvasLayer
-
+class_name DebugMenu
 
 @onready var tile_location_label: Label = $MarginContainer/VBoxContainer/TileCoordLabel
 @onready var camera = get_viewport().get_camera_2d()
@@ -45,17 +45,27 @@ func _on_advanced_toggle_toggled(toggled_on: bool) -> void:
 
 func get_rooms():
 	var rooms = get_tree().get_nodes_in_group("rooms")
+	return rooms
 
 func _on_toggle_door_points_toggled(toggled_on: bool) -> void:
 	var rooms = get_rooms()
-	for r in rooms: 
-		if r is Room:
-			r.toggle_door_points()
+	if rooms:
+		for r in rooms: 
+			if r is Room:
+				r.toggle_door_points()
 
 
 func _on_toggle_loot_spawns_toggled(toggled_on: bool) -> void:
-	pass # Replace with function body.
+	var rooms = get_rooms()
+	if rooms:
+		for r in rooms: 
+			if r is Room:
+				r.toggle_loot_spawns()
 
 
 func _on_toggle_enemy_spawns_toggled(toggled_on: bool) -> void:
-	pass # Replace with function body.
+	var rooms = get_rooms()
+	if rooms:
+		for r in rooms: 
+			if r is Room:
+				r.toggle_enemy_spawns()
