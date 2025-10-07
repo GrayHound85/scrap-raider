@@ -22,6 +22,9 @@ func _ready() -> void:
 		for i in range(gen.MAX_ROOMS):
 			build_corridor(door, corridor)
 			var room = rooms.pick_random().instantiate()
+			var connection_door: Dictionary = room.get_connecting_door(door.values()[0])
+			print(connection_door)
+			offset = offset + connection_door.values()[0]
 			room.position = offset * tile_size
 			rooms_container.add_child(room)
 			door = room.get_random_valid_door()

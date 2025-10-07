@@ -24,7 +24,7 @@ func _ready() -> void:
 	
 	for pos in loot.get_used_cells():
 		loot_points.append(pos)
-		
+	
 	for pos in enemies.get_used_cells():
 		enemy_points.append(pos)
 	
@@ -36,13 +36,13 @@ func toggle_door_points():
 		doors.visible = false
 	else:
 		doors.visible = true
-
+	
 func toggle_loot_spawns():
 	if loot.visible == true:
 		loot.visible = false
 	else:
 		loot.visible = true
-		
+
 func toggle_enemy_spawns():
 	if enemies.visible == true:
 		enemies.visible = false
@@ -54,35 +54,42 @@ func hide_markers():
 	doors.visible = false
 	loot.visible = false
 	enemies.visible = false
-	
 
-func get_connecting_door(direction) -> Dictionary:
-	var options = []
-	var picked_options: Array[Dictionary]
-	
+
+func get_connecting_door(connecting_direction: Vector2i) -> Dictionary:
+	var options: Array[Vector2i] = []
+	var picked: Dictionary = {}
+	var direction: Vector2i = Vector2i(0, 0)
+
 	for d in door_points:
 		if not used_doors.has(d):
 			options.append(d)
-	
+
 	if options.size() > 0:
-		var door_pos = INVALID_DOOR
-		if Vector2i(door_pos.x + 1, door_pos.y) in floor.get_used_cells():
-			direction = Vector2i(-1, 0)
-		elif Vector2i(door_pos.x - 1, door_pos.y) in floor.get_used_cells():
-			direction = Vector2i(1, 0)
-		elif  Vector2i(door_pos.x, door_pos.y - 1) in floor.get_used_cells():
-			direction = Vector2i(0, 1)
-		elif  Vector2i(door_pos.x, door_pos.y + 1) in floor.get_used_cells():
-			direction = Vector2i(0, -1)
-		else:
-			direction = INVALID_DOOR
-		
-		var picked = {door_pos: direction}
-		
+		for door_pos in options:
+			if Vector2i(door_pos.x + 1, door_pos.y) in floor.get_used_cells():
+				direction = Vector2i(-1, 0)
+			elif Vector2i(door_pos.x - 1, door_pos.y) in floor.get_used_cells():
+				direction = Vector2i(1, 0)
+			elif Vector2i(door_pos.x, door_pos.y - 1) in floor.get_used_cells():
+				direction = Vector2i(0, 1)
+			elif Vector2i(door_pos.x, door_pos.y + 1) in floor.get_used_cells():
+				direction = Vector2i(0, -1)
+			else:
+				direction = Vector2i(0, 0)
+
+			if direction == -connecting_direction:
+				picked[door_pos] = direction
+				used_doors.append(door_pos)
+				break
+
+		if not picked:
+			picked[INVALID_DOOR] = Vector2i(0, 0)
 	else:
-		var picked = {INVALID_DOOR: direction}
-	picked_options.append(picked)
+		picked[INVALID_DOOR] = Vector2i(0, 0)
+
 	return picked
+
 
 func get_random_valid_door() -> Dictionary:
 	var options = []
