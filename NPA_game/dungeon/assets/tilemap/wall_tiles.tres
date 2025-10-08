@@ -1,0 +1,14 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://jmadttcqcruw"]
+
+[ext_resource type="Texture2D" uid="uid://cpkh8w64iwwed" path="res://dungeon/assets/tilemap/Enviroment_wall_tile_1.png" id="1_w75sr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_af3sy"]
+texture = ExtResource("1_w75sr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_af3sy")

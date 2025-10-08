@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwajy3ldatg5h"]
+
+[ext_resource type="Texture2D" uid="uid://bbdfbtbjk2gxt" path="res://dungeon/assets/tourch_light.tres" id="1_eeksd"]
+[ext_resource type="Texture2D" uid="uid://i2kbeyy3arpc" path="res://dungeon/assets/tourch_sprite_sheet.png" id="1_m4qrm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw2qt"]
+atlas = ExtResource("1_m4qrm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y0gv"]
+atlas = ExtResource("1_m4qrm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlurh"]
+atlas = ExtResource("1_m4qrm")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eeksd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vw2qt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2y0gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlurh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Sprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_eeksd")
+autoplay = "default"
+frame_progress = 0.3770893
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 1.5
+texture = ExtResource("1_eeksd")

@@ -60,6 +60,7 @@ func get_connecting_door(connecting_direction: Vector2i) -> Dictionary:
 	var options: Array[Vector2i] = []
 	var picked: Dictionary = {}
 	var direction: Vector2i = Vector2i(0, 0)
+	#print("door points: " + str(door_points))
 
 	for d in door_points:
 		if not used_doors.has(d):
@@ -67,6 +68,7 @@ func get_connecting_door(connecting_direction: Vector2i) -> Dictionary:
 
 	if options.size() > 0:
 		for door_pos in options:
+			#print("door pos: " + str(door_pos))
 			if Vector2i(door_pos.x + 1, door_pos.y) in floor.get_used_cells():
 				direction = Vector2i(-1, 0)
 			elif Vector2i(door_pos.x - 1, door_pos.y) in floor.get_used_cells():

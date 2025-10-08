@@ -24,6 +24,10 @@ corridors = Array[PackedScene]([ExtResource("4_gfh1l")])
 position = Vector2(111, 112)
 
 [node name="DebugHUD" parent="." instance=ExtResource("4_bo7df")]
+visible = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = ExtResource("7_pqcbx")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.35156304, 0.35156283, 0.35156286, 1)

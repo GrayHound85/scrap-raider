@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://b656e3oclr3tg" path="res://dungeon/assets/tilemap/floor_tiles.tres" id="2_yer8d"]
 [ext_resource type="TileSet" uid="uid://cim3jn68nf42w" path="res://HUDs/debug/assets/spawn_points.tres" id="3_g8ey4"]
 
-[node name="TemplateRoom" type="Node2D" groups=["rooms"]]
+[node name="Room01" type="Node2D" groups=["rooms"]]
 script = ExtResource("1_liy7m")
 room_name = "room_01"
 
