@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtgr2tadcp5f"]
+[gd_scene load_steps=8 format=3 uid="uid://dtgr2tadcp5f"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://cwbjvdw45d7er" path="res://dungeon/assets/tilemap/Enviroment_floor_tile_1.png" id="2_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://d2a8bic4f5rv8" path="res://HUDs/main_hud.tscn" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://cdbvveec0laor" path="res://dungeon/assets/tilemap/Enviroment_floor_tile_3.png" id="3_hqtel"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sh265"]
 
@@ -36,11 +37,11 @@ color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 shape = SubResource("CircleShape2D_sh265")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.125, 0.12500048)
-scale = Vector2(14.25, 13.750001)
+scale = Vector2(0.6425781, 0.62008786)
+texture = ExtResource("3_hqtel")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(7, 7)
+zoom = Vector2(4, 4)
 
 [node name="MainHUD" parent="." instance=ExtResource("2_onrkg")]
 

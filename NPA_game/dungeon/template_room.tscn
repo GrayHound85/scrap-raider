@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=4 uid="uid://dg31n7l1ca422"]
+[gd_scene load_steps=7 format=4 uid="uid://dg31n7l1ca422"]
 
 [ext_resource type="Script" uid="uid://nox2m5a0f3lo" path="res://dungeon/scripts/room_data.gd" id="1_rvgly"]
 [ext_resource type="TileSet" uid="uid://b656e3oclr3tg" path="res://dungeon/assets/tilemap/floor_tiles.tres" id="1_s3q12"]
 [ext_resource type="TileSet" uid="uid://cim3jn68nf42w" path="res://HUDs/debug/assets/spawn_points.tres" id="2_2sxid"]
+[ext_resource type="TileSet" uid="uid://dw6fxdcai3fij" path="res://dungeon/assets/tilemap/underwall_floor_tiles.tres" id="3_6lrip"]
+[ext_resource type="PackedScene" uid="uid://bwajy3ldatg5h" path="res://dungeon/objects/tourch.tscn" id="4_7cvkf"]
+[ext_resource type="TileSet" uid="uid://jmadttcqcruw" path="res://dungeon/assets/tilemap/wall_tiles.tres" id="5_7cvkf"]
 
 [node name="TemplateRoom" type="Node2D"]
 script = ExtResource("1_rvgly")
@@ -11,7 +14,24 @@ script = ExtResource("1_rvgly")
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAAAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAAMAAAAAAAAAAAACAAQAAAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAA=")
 tile_set = ExtResource("1_s3q12")
 
+[node name="UnderwallFloor" type="TileMapLayer" parent="."]
+tile_set = ExtResource("3_6lrip")
+
+[node name="light sources" type="Node2D" parent="."]
+
+[node name="Sprite2D" parent="light sources" instance=ExtResource("4_7cvkf")]
+position = Vector2(48, 15)
+
+[node name="Sprite2D2" parent="light sources" instance=ExtResource("4_7cvkf")]
+position = Vector2(204.99998, 82.999985)
+rotation = 3.1392882
+
+[node name="Sprite2D3" parent="light sources" instance=ExtResource("4_7cvkf")]
+position = Vector2(12, 188)
+rotation = 4.72115
+
 [node name="Walls" type="TileMapLayer" parent="."]
+tile_set = ExtResource("5_7cvkf")
 
 [node name="Doors" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAACAP//AAAAAAAAAAAFAAIAAAAAAAAAAAACAAUAAAAAAAAAAAD//wIAAAAAAAAAAAA=")

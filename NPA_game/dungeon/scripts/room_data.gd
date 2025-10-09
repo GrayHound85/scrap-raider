@@ -5,9 +5,11 @@ class_name Room
 @export var can_spawn_enemies: bool = true
 @onready var floor: TileMapLayer = $Floor
 
-@onready var doors = $Doors
-@onready var loot = $LootSpawns
-@onready var enemies = $EnemySpawns
+@onready var doors: TileMapLayer = $Doors
+@onready var loot: TileMapLayer = $LootSpawns
+@onready var enemies: TileMapLayer = $EnemySpawns
+@onready var walls: TileMapLayer = $Walls
+
 
 var door_points: Array[Vector2i]
 var loot_points: Array[Vector2i]
@@ -90,6 +92,9 @@ func get_connecting_door(connecting_direction: Vector2i) -> Dictionary:
 	else:
 		picked[INVALID_DOOR] = Vector2i(0, 0)
 
+	for tile in walls.get_used_cells():
+		if tile == picked.keys()[0]:
+			walls.erase_cell(tile)
 	return picked
 
 
@@ -118,5 +123,7 @@ func get_random_valid_door() -> Dictionary:
 		picked[door_pos] = direction
 	else:
 		picked[INVALID_DOOR] = direction
-		
+	for tile in walls.get_used_cells():
+		if tile == picked.keys()[0]:
+			walls.erase_cell(tile)
 	return picked

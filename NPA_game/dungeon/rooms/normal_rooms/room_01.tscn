@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=4 uid="uid://pdqgl5se8b3e"]
+[gd_scene load_steps=7 format=4 uid="uid://pdqgl5se8b3e"]
 
 [ext_resource type="Script" uid="uid://nox2m5a0f3lo" path="res://dungeon/scripts/room_data.gd" id="1_liy7m"]
 [ext_resource type="TileSet" uid="uid://b656e3oclr3tg" path="res://dungeon/assets/tilemap/floor_tiles.tres" id="2_yer8d"]
 [ext_resource type="TileSet" uid="uid://cim3jn68nf42w" path="res://HUDs/debug/assets/spawn_points.tres" id="3_g8ey4"]
+[ext_resource type="TileSet" uid="uid://dw6fxdcai3fij" path="res://dungeon/assets/tilemap/underwall_floor_tiles.tres" id="3_hrgm2"]
+[ext_resource type="PackedScene" uid="uid://bwajy3ldatg5h" path="res://dungeon/objects/tourch.tscn" id="4_c0xoq"]
+[ext_resource type="TileSet" uid="uid://jmadttcqcruw" path="res://dungeon/assets/tilemap/wall_tiles.tres" id="5_hrgm2"]
 
 [node name="Room01" type="Node2D" groups=["rooms"]]
 script = ExtResource("1_liy7m")
@@ -12,7 +15,18 @@ room_name = "room_01"
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAAAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAAMAAAAAAAAAAAACAAQAAAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAA=")
 tile_set = ExtResource("2_yer8d")
 
+[node name="UnderwallFloor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAEAAAABAP//AAABAAEAAAACAP//AAAAAAEAAAADAP//AAABAAEAAAAEAP//AAAAAAEAAAAFAP//AAABAAEAAAAHAP//AAABAAEAAAAIAP//AAAAAAEAAAAGAP//AAAAAAEAAAAJAP//AAABAAEAAAAKAAAAAAAAAAAAAAAKAAEAAAAAAAEAAAAKAAIAAAAAAAAAAAAKAAMAAAAAAAEAAAAKAAQAAAAAAAAAAAAKAAUAAAAAAAEAAAAKAAYAAAAAAAAAAAAKAAcAAAAAAAEAAAAKAAgAAAAAAAAAAAAKAAkAAAAAAAEAAAD//wgAAAABAAAAAAD//wkAAAABAAEAAAD//wYAAAABAAAAAAD//wcAAAABAAEAAAD//wQAAAABAAAAAAD//wUAAAABAAEAAAD//wIAAAABAAAAAAD//wMAAAABAAEAAAD//wAAAAABAAAAAAD//wEAAAABAAEAAAAAAAoAAAAAAAAAAAABAAoAAAABAAAAAAACAAoAAAAAAAAAAAADAAoAAAABAAAAAAAFAAoAAAABAAAAAAAGAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAAHAAoAAAABAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAABAAAAAAAKAAoAAAAAAAAAAAD/////AAABAAEAAAAKAP//AAAAAAEAAAD//woAAAABAAAAAAA=")
+tile_set = ExtResource("3_hrgm2")
+
+[node name="light sources" type="Node2D" parent="."]
+
+[node name="Sprite2D" parent="light sources" instance=ExtResource("4_c0xoq")]
+position = Vector2(52, 12)
+
 [node name="Walls" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAFABAP//AAAAAAAAAFACAP//AAAAAAAAAFADAP//AAAAAAAAAFAEAP//AAAAAAAAAFAFAAAAAAAAAAAAADAFAAEAAAAAAAAAADAFAAIAAAAAAAAAADAFAAMAAAAAAAAAADAFAAQAAAAAAAAAADAEAAUAAAAAAAAAAGADAAUAAAAAAAAAAGACAAUAAAAAAAAAAGABAAUAAAAAAAAAAGAAAAUAAAAAAAAAAGD//wQAAAAAAAAAAAD//wMAAAAAAAAAAAD//wIAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAAFAP//AQAAAAAAAFD/////AQAAAAAAAAD//wUAAQAAAAAAAGAFAAUAAQAAAAAAADA=")
+tile_set = ExtResource("5_hrgm2")
 
 [node name="Doors" type="TileMapLayer" parent="."]
 visible = false
