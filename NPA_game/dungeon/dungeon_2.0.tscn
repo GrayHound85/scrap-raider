@@ -1,19 +1,20 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwrgqex05ljdc"]
+[gd_scene load_steps=12 format=3 uid="uid://bwrgqex05ljdc"]
 
 [ext_resource type="Script" uid="uid://b08sqd8u5po2i" path="res://dungeon/scripts/dungeon_2.0.gd" id="1_6bnvv"]
 [ext_resource type="PackedScene" uid="uid://cxhjnl13cjieq" path="res://dungeon/rooms/special_rooms/start_room_01.tscn" id="1_fpp86"]
 [ext_resource type="PackedScene" uid="uid://dtgr2tadcp5f" path="res://player.tscn" id="2_1b30c"]
-[ext_resource type="PackedScene" uid="uid://pdqgl5se8b3e" path="res://dungeon/rooms/normal_rooms/room_01.tscn" id="2_muhwk"]
-[ext_resource type="PackedScene" uid="uid://ci64g5i8tj32n" path="res://dungeon/rooms/normal_rooms/room_02.tscn" id="3_bo7df"]
 [ext_resource type="PackedScene" uid="uid://yyswdkxsuwfp" path="res://HUDs/debug/debug_hud.tscn" id="4_bo7df"]
 [ext_resource type="PackedScene" uid="uid://otnsniu1gem6" path="res://dungeon/corridors/corridor_01.tscn" id="4_gfh1l"]
-[ext_resource type="PackedScene" uid="uid://x128jwlbn6e8" path="res://dungeon/rooms/normal_rooms/room_03.tscn" id="4_v4vhm"]
-[ext_resource type="PackedScene" uid="uid://dwcwg57ufrhu2" path="res://dungeon/rooms/normal_rooms/room_04.tscn" id="5_phknx"]
+[ext_resource type="PackedScene" uid="uid://ddoihnk5j0yw2" path="res://dungeon/rooms/normal_rooms/level_01/01_room_01.tscn" id="4_phknx"]
+[ext_resource type="PackedScene" uid="uid://x128jwlbn6e8" path="res://dungeon/rooms/normal_rooms/level_01/01_room_03.tscn" id="4_v4vhm"]
+[ext_resource type="PackedScene" uid="uid://cwuuroit1bsex" path="res://dungeon/rooms/normal_rooms/level_01/01_room_02.tscn" id="5_mced1"]
+[ext_resource type="PackedScene" uid="uid://dwcwg57ufrhu2" path="res://dungeon/rooms/normal_rooms/level_01/01_room_04.tscn" id="5_phknx"]
+[ext_resource type="PackedScene" uid="uid://b8nf7fdfeikwb" path="res://dungeon/rooms/normal_rooms/level_01/01_room_05.tscn" id="6_mced1"]
 [ext_resource type="TileSet" uid="uid://b656e3oclr3tg" path="res://dungeon/assets/tilemap/floor_tiles.tres" id="7_pqcbx"]
 
 [node name="dungeon_02" type="Node2D"]
 script = ExtResource("1_6bnvv")
-rooms = Array[PackedScene]([ExtResource("2_muhwk"), ExtResource("3_bo7df"), ExtResource("4_v4vhm"), ExtResource("5_phknx")])
+rooms = Array[PackedScene]([ExtResource("4_v4vhm"), ExtResource("5_phknx"), ExtResource("4_phknx"), ExtResource("5_mced1"), ExtResource("6_mced1")])
 corridors = Array[PackedScene]([ExtResource("4_gfh1l")])
 
 [node name="StartRoom" parent="." instance=ExtResource("1_fpp86")]

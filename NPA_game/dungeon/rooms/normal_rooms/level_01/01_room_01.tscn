@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=4 uid="uid://ddoihnk5j0yw2"]
+
+[ext_resource type="Script" uid="uid://nox2m5a0f3lo" path="res://dungeon/scripts/room_data.gd" id="1_x3qbs"]
+[ext_resource type="TileSet" uid="uid://b656e3oclr3tg" path="res://dungeon/assets/tilemap/floor_tiles.tres" id="2_m4l12"]
+[ext_resource type="TileSet" uid="uid://dw6fxdcai3fij" path="res://dungeon/assets/tilemap/underwall_floor_tiles.tres" id="3_832ax"]
+[ext_resource type="TileSet" uid="uid://jmadttcqcruw" path="res://dungeon/assets/tilemap/wall_tiles.tres" id="4_gixkc"]
+[ext_resource type="TileSet" uid="uid://cim3jn68nf42w" path="res://HUDs/debug/assets/spawn_points.tres" id="5_833b0"]
+
+[node name="TemplateRoom" type="Node2D"]
+script = ExtResource("1_x3qbs")
+
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAAMAAAAAAAAAAAACAAQAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAUAAAAAAAAAAAAGAAQAAAAAAAAAAAAGAAMAAAAAAAAAAAAFAAIAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAUAAAAAAAAAAAACAAUAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAFAP//AAAAAAAAAAAEAP//AAAAAAAAAAADAP//AAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAQAAAAAAAAA=")
+tile_set = ExtResource("2_m4l12")
+
+[node name="UnderwallFloor" type="TileMapLayer" parent="."]
+tile_set = ExtResource("3_832ax")
+
+[node name="light sources" type="Node2D" parent="."]
+
+[node name="Walls" type="TileMapLayer" parent="."]
+tile_set = ExtResource("4_gixkc")
+
+[node name="Doors" type="TileMapLayer" parent="."]
+visible = false
+tile_map_data = PackedByteArray("AAD//wQAAAAAAAAAAAAEAP7/AAAAAAAAAAAIAAIAAAAAAAAAAAADAAgAAAAAAAAAAAA=")
+tile_set = ExtResource("5_833b0")
+
+[node name="EnemySpawns" type="TileMapLayer" parent="."]
+visible = false
+tile_map_data = PackedByteArray("AAABAAEAAwAAAAAAAAACAAEAAwAAAAAAAAADAAEAAwAAAAAAAAABAAIAAwAAAAAAAAABAAMAAwAAAAAAAAACAAIAAwAAAAAAAAACAAMAAwAAAAAAAAADAAIAAwAAAAAAAAADAAMAAwAAAAAAAAA=")
+tile_set = ExtResource("5_833b0")
+
+[node name="LootSpawns" type="TileMapLayer" parent="."]
+visible = false
+tile_map_data = PackedByteArray("AAACAAIAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAAEAAAAAQAAAAAAAAA=")
+tile_set = ExtResource("5_833b0")
