@@ -3,6 +3,7 @@ class_name Room
 
 @export var room_name: String = "Unnamed"
 @export var can_spawn_enemies: bool = true
+@warning_ignore("shadowed_global_identifier")
 @onready var floor: TileMapLayer = $Floor
 
 @onready var doors: TileMapLayer = $Doors
@@ -127,3 +128,4 @@ func get_random_valid_door() -> Dictionary:
 		if tile == picked.keys()[0]:
 			walls.erase_cell(tile)
 	return picked
+	
