@@ -33,10 +33,14 @@ animations = [{
 }]
 
 [node name="Sprite2D" type="AnimatedSprite2D"]
+z_index = 100
 sprite_frames = SubResource("SpriteFrames_eeksd")
 autoplay = "default"
 frame_progress = 0.3770893
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+z_index = 100
+z_as_relative = false
+y_sort_enabled = true
 energy = 1.5
 texture = ExtResource("1_eeksd")

@@ -1,8 +1,11 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://dw6fxdcai3fij"]
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://dw6fxdcai3fij"]
 
 [ext_resource type="Texture2D" uid="uid://cwbjvdw45d7er" path="res://dungeon/assets/tilemap/Enviroment_floor_tile_1.png" id="1_llqeb"]
 [ext_resource type="Texture2D" uid="uid://d0rb0gnhf2rdd" path="res://dungeon/assets/tilemap/Enviroment_floor_tile_2.png" id="2_o33ue"]
 [ext_resource type="Texture2D" uid="uid://cdbvveec0laor" path="res://dungeon/assets/tilemap/Enviroment_floor_tile_3.png" id="3_lahsv"]
+[ext_resource type="Texture2D" uid="uid://cpkh8w64iwwed" path="res://dungeon/assets/tilemap/Enviroment_wall_tile_1.png" id="4_o33ue"]
+[ext_resource type="Texture2D" uid="uid://bvilneakuc6uy" path="res://dungeon/assets/tilemap/Enviroment_wall_90_turn_tile_1.png" id="5_sog8o"]
+[ext_resource type="Texture2D" uid="uid://cvorq5rkl0wdr" path="res://dungeon/assets/tilemap/Enviroment_wall_90_turn_inner_tile_1.png" id="6_t6hcr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rjdts"]
 texture = ExtResource("1_llqeb")
@@ -21,7 +24,31 @@ texture = ExtResource("3_lahsv")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lahsv"]
+texture = ExtResource("4_o33ue")
+1:1/0 = 0
+0:1/0 = 0
+1:0/0 = 0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ggr4d"]
+texture = ExtResource("5_sog8o")
+1:0/0 = 0
+0:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pnixf"]
+texture = ExtResource("6_t6hcr")
+1:0/0 = 0
+0:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_rjdts")
 sources/1 = SubResource("TileSetAtlasSource_tqxl6")
 sources/2 = SubResource("TileSetAtlasSource_xc2s7")
+sources/3 = SubResource("TileSetAtlasSource_lahsv")
+sources/4 = SubResource("TileSetAtlasSource_ggr4d")
+sources/5 = SubResource("TileSetAtlasSource_pnixf")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvilneakuc6uy"
-path="res://.godot/imported/Enviroment_wall_90_turn_tile_1.png-73a45661e3d1abcf76daa47d718ef029.ctex"
+uid="uid://cvorq5rkl0wdr"
+path="res://.godot/imported/Enviroment_wall_90_turn_inner_tile_1.png-f5389eb37b7972a52336a18767fca70c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dungeon/assets/tilemap/Enviroment_wall_90_turn_tile_1.png"
-dest_files=["res://.godot/imported/Enviroment_wall_90_turn_tile_1.png-73a45661e3d1abcf76daa47d718ef029.ctex"]
+source_file="res://dungeon/assets/tilemap/Enviroment_wall_90_turn_inner_tile_1.png"
+dest_files=["res://.godot/imported/Enviroment_wall_90_turn_inner_tile_1.png-f5389eb37b7972a52336a18767fca70c.ctex"]
 
 [params]
 

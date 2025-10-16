@@ -19,6 +19,9 @@ fill_from = Vector2(0.4906542, 0.4906542)
 fill_to = Vector2(0.88785046, 0.25233644)
 
 [node name="Node2D" type="CharacterBody2D"]
+z_index = 99
+z_as_relative = false
+y_sort_enabled = true
 script = ExtResource("1_4flbx")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -41,7 +44,8 @@ scale = Vector2(0.6425781, 0.62008786)
 texture = ExtResource("3_hqtel")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.3, 0.3)
+z_index = 99
+zoom = Vector2(4, 4)
 
 [node name="MainHUD" parent="." instance=ExtResource("2_onrkg")]
 
