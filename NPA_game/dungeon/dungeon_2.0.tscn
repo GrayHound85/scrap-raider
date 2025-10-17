@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bwrgqex05ljdc"]
+[gd_scene load_steps=13 format=3 uid="uid://bwrgqex05ljdc"]
 
 [ext_resource type="Script" uid="uid://b08sqd8u5po2i" path="res://dungeon/scripts/dungeon_2.0.gd" id="1_6bnvv"]
 [ext_resource type="PackedScene" uid="uid://cxhjnl13cjieq" path="res://dungeon/rooms/special_rooms/start_room_01.tscn" id="1_fpp86"]
-[ext_resource type="PackedScene" uid="uid://dtgr2tadcp5f" path="res://player.tscn" id="2_1b30c"]
+[ext_resource type="PackedScene" uid="uid://dtgr2tadcp5f" path="res://player/player.tscn" id="2_1b30c"]
 [ext_resource type="PackedScene" uid="uid://yyswdkxsuwfp" path="res://HUDs/debug/debug_hud.tscn" id="4_bo7df"]
 [ext_resource type="PackedScene" uid="uid://otnsniu1gem6" path="res://dungeon/corridors/corridor_01.tscn" id="4_gfh1l"]
 [ext_resource type="PackedScene" uid="uid://ddoihnk5j0yw2" path="res://dungeon/rooms/normal_rooms/level_01/01_room_01.tscn" id="4_phknx"]
@@ -11,11 +11,21 @@
 [ext_resource type="PackedScene" uid="uid://dwcwg57ufrhu2" path="res://dungeon/rooms/normal_rooms/level_01/01_room_04.tscn" id="5_phknx"]
 [ext_resource type="PackedScene" uid="uid://b8nf7fdfeikwb" path="res://dungeon/rooms/normal_rooms/level_01/01_room_05.tscn" id="6_mced1"]
 [ext_resource type="TileSet" uid="uid://b656e3oclr3tg" path="res://dungeon/assets/tilemap/floor_tiles.tres" id="7_pqcbx"]
+[ext_resource type="Texture2D" uid="uid://cayms1hypl3en" path="res://dungeon/assets/snow_background_darker.png" id="8_tq5xy"]
 
 [node name="dungeon_02" type="Node2D"]
 script = ExtResource("1_6bnvv")
 rooms = Array[PackedScene]([ExtResource("4_v4vhm"), ExtResource("5_phknx"), ExtResource("4_phknx"), ExtResource("5_mced1"), ExtResource("6_mced1")])
 corridors = Array[PackedScene]([ExtResource("4_gfh1l")])
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1732, 880)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(107, 116)
+texture = ExtResource("8_tq5xy")
 
 [node name="StartRoom" parent="." instance=ExtResource("1_fpp86")]
 
@@ -32,3 +42,5 @@ position = Vector2(111, 112)
 tile_set = ExtResource("7_pqcbx")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(0, 24)
+color = Color(0.90359825, 0.90359825, 0.9035982, 1)
