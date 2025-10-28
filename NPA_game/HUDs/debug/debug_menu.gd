@@ -1,17 +1,17 @@
 extends CanvasLayer
 class_name DebugMenu
 
-@onready var tile_location_label: Label = $MarginContainer/VBoxContainer/TileCoordLabel
+@onready var tile_location_label: Label = $MarginContainer/MarginContainer/VBoxContainer/TileCoordLabel
 @onready var camera = get_viewport().get_camera_2d()
 @onready var tile_map: TileMapLayer = get_tree().get_root().find_child("TileMapLayer", true, false)
-@onready var fps_label: Label = $MarginContainer/VBoxContainer/FPSLabel
-@onready var advanced_menu: Panel = $MarginContainer/VBoxContainer/Control
+@onready var fps_label: Label = $MarginContainer/MarginContainer/VBoxContainer/FPSLabel
+@onready var advanced_menu: Panel = $MarginContainer/MarginContainer/VBoxContainer/Control
 @onready var advanced_toggle: CheckButton = $MarginContainer/VBoxContainer/AdvancedToggle
 
 # Advanced options
-@onready var toggle_door_points: CheckButton = $MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer/ToggleDoorPoints
-@onready var toggle_loot_spawns: CheckButton = $MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer/ToggleLootSpawns
-@onready var toggle_enemy_spawns: CheckButton = $MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer/ToggleEnemySpawns
+@onready var toggle_door_points: CheckButton = $MarginContainer/MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer/ToggleDoorPoints
+@onready var toggle_loot_spawns: CheckButton = $MarginContainer/MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer/ToggleLootSpawns
+@onready var toggle_enemy_spawns: CheckButton = $MarginContainer/MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer/ToggleEnemySpawns
 
 
 var view_to_world

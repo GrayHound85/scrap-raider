@@ -1,19 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://otnsniu1gem6"]
+[gd_scene load_steps=5 format=4 uid="uid://otnsniu1gem6"]
 
 [ext_resource type="Script" uid="uid://bwnypygm5jshc" path="res://dungeon/scripts/corridor_data.gd" id="1_2b7yf"]
 [ext_resource type="TileSet" uid="uid://b656e3oclr3tg" path="res://dungeon/assets/tilemap/floor_tiles.tres" id="1_cfhg0"]
 [ext_resource type="TileSet" uid="uid://cim3jn68nf42w" path="res://HUDs/debug/assets/spawn_points.tres" id="2_hmm2k"]
+[ext_resource type="TileSet" uid="uid://dw6fxdcai3fij" path="res://dungeon/assets/tilemap/underwall_floor_tiles.tres" id="3_5rbmb"]
 
 [node name="Corridor_01" type="Node2D" groups=["corridors"]]
 script = ExtResource("1_2b7yf")
 
 [node name="Floor" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAA=")
 tile_set = ExtResource("1_cfhg0")
 
-[node name="Walls" type="TileMapLayer" parent="."]
+[node name="UnderwallFloor" type="TileMapLayer" parent="."]
+z_index = -1
+tile_map_data = PackedByteArray("AAACAAAAAAAAAAAAAAACAAEAAAAAAAEAAAD//wAAAAABAAAAAAD//wEAAAABAAEAAAAAAAIAAAAAAAAAAAABAAIAAAABAAAAAAACAAIAAAAAAAAAAAD/////AAABAAEAAAD//wIAAAABAAAAAAABAP//AAABAAAAAAAAAP//AAABAAAAAAACAP//AAABAAAAAAA=")
+tile_set = ExtResource("3_5rbmb")
 
 [node name="Doors" type="TileMapLayer" parent="."]
 visible = false
-tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAA=")
 tile_set = ExtResource("2_hmm2k")

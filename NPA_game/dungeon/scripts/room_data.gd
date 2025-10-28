@@ -96,6 +96,7 @@ func get_connecting_door(connecting_direction: Vector2i) -> Dictionary:
 	for tile in walls.get_used_cells():
 		if tile == picked.keys()[0]:
 			walls.erase_cell(tile)
+	fix_door_points(picked)
 	return picked
 
 
@@ -127,5 +128,38 @@ func get_random_valid_door() -> Dictionary:
 	for tile in walls.get_used_cells():
 		if tile == picked.keys()[0]:
 			walls.erase_cell(tile)
+	
+	fix_door_points(picked)
 	return picked
 	
+	# Ensures that the tiles around the doors are correct (adds corner tiles around doors)
+func fix_door_points(picked: Dictionary):
+	var door_point = picked.keys()[0]	
+	var door_direction = picked.values()[0]
+	
+	var all_surrounding = walls.get_surrounding_cells(door_point)
+	var corners = []
+	for cell in all_surrounding:
+		if cell in walls.get_used_cells():
+			corners.append(cell)
+	
+	var cell1 = corners[0]
+	var cell2 = corners[1]
+	if door_direction == Vector2i(-1, 0):
+		walls.set_cell(cell1,2, Vector2i(0,0), 1)
+		walls.set_cell(cell2,2, Vector2i(0,0), 2)
+	if door_direction == Vector2i(1, 0):
+		walls.set_cell(cell1,2, Vector2i(0,0))
+		walls.set_cell(cell2,2, Vector2i(0,0), 3)
+	if door_direction == Vector2i(0, 1):
+		walls.set_cell(cell1,2, Vector2i(0,0))
+		walls.set_cell(cell2,2, Vector2i(0,0), 1)
+	if door_direction == Vector2i(0, -1):
+		walls.set_cell(cell1,2, Vector2i(0,0), 3)
+		walls.set_cell(cell2,2, Vector2i(0,0), 2)
+		
+	
+
+	#walls.erase_cell(corners)
+	#walls.erase_cell(corner_2)
+		

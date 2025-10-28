@@ -7,9 +7,10 @@ extends Node2D
 @export var corridors: Array[PackedScene]
 @onready var rooms_container: Node2D = $Rooms
 @onready var corridors_container: Node2D = $Corridors
+@onready var corridor_walls: TileMapLayer = $CorridorWalls
 
 enum gen {
-	MAX_ROOMS = 20,
+	MAX_ROOMS = 5,
 	CORRIDOR_LENGTH = 3
 }
 
@@ -166,7 +167,7 @@ func _ready() -> void:
 
 @warning_ignore("unused_parameter")
 func build_corridor(door1: Dictionary, corridor, door2: Dictionary = {Vector2i(-9999, -9999): Vector2i(0, 0)}) -> void:
-	#var offset: Vector2
+	#var offset: Vector2	
 	var d1_point = door1.keys()[0]
 	var d1_direction = door1.values()[0]
 	#print(d1_point)
@@ -175,7 +176,82 @@ func build_corridor(door1: Dictionary, corridor, door2: Dictionary = {Vector2i(-
 		var c = corridor.instantiate()
 		var corridor_pos = d1_point + d1_direction * i
 		c.position = Vector2(corridor_pos) * tile_size
+		if i != 0 and i != (gen.CORRIDOR_LENGTH - 1):
+			var all_surrounding = corridor_walls.get_surrounding_cells(corridor_pos)
+
+			if d1_direction == Vector2i(-1, 0) or d1_direction == Vector2i(1,0):
+				#print("X")
+				#print(all_surrounding[1], all_surrounding[3])
+				corridor_walls.set_cell(all_surrounding[1], 0, Vector2i(0,0), 2)
+				corridor_walls.set_cell(all_surrounding[3], 0, Vector2i(0,0), 1)
+				#tilemap.set_cell(wall_cells[1], 0, Vector2i(0,0), 2)
+			if d1_direction == Vector2i(0, -1) or d1_direction == Vector2i(0,1):
+				#print("y")
+				#print(all_surrounding[0], all_surrounding[2])
+				corridor_walls.set_cell(all_surrounding[0], 0, Vector2i(0,0), 3)
+				corridor_walls.set_cell(all_surrounding[2], 0, Vector2i(0,0))
+			
+			#tilemap.erase_cell()
+			
+			
 		corridors_container.add_child(c)
+			
+"""
+func _ready() -> void:
+	var current_room: Room = start_room
+	if rooms and corridors:
+		var door = start_room.get_random_valid_door()
+		var corridor = corridors.pick_random()
+		var corridor_dir = door.values()[0]
+		mark_room_as_occupied(current_room)
+		
+		for i in range(gen.MAX_ROOMS):
+			var valid_room_found = false
+			var attempts := 0
+			while not valid_room_found and attempts < 10:
+				attempts += 1
+				var offset = build_test_corridor(door)
+				
+				var room = rooms.pick_random().instantiate()
+				rooms_container.add_child(room)
+				
+				var connection_door: Dictionary = room.get_connecting_door(corridor_dir)
+				var room_door_pos: Vector2i = connection_door.keys()[0]
+				room.position = (offset - Vector2(room_door_pos)) * tile_size
+				
+				if room_overlap(room):
+					room.queue_free()
+					print("Rooms overlap... trying again")
+					if attempts == 9:
+						print("No valid room fits. Trying another door from the current connected room.")
+						var new_door = current_room.get_random_valid_door()
+						
+						if new_door.keys()[0] == Vector2i(-9999, -9999):
+							print("No doors left in current room, stopping generation.")
+							break
+						
+						door = new_door
+						corridor_dir = door.values()[0]
+						attempts = 0
+						continue
+					continue
+				
+				# Successfull room found
+				mark_room_as_occupied(room)
+				valid_room_found = true
+				build_corridor(door, corridor)
+				current_room = room 
+				
+				door = room.get_random_valid_door()
+				#print("Next door pos local = " + str(door.keys()[0]))
+				door[Vector2i(offset - Vector2(room_door_pos) + Vector2(door.keys()[0]))] = door.values()[0]
+				door.erase(door.keys()[0])
+				#print("Next door pos global = " + str(door.keys()[0]))
+				corridor_dir = door.values()[0]
+			
+	else:
+		print("Rooms and or corridors don't exist")
+"""
 	
 	#var corridor_end = d1_point + d1_direction * (gen.CORRIDOR_LENGTH - 1)
 	#offset = corridor_end

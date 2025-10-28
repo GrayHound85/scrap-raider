@@ -29,33 +29,43 @@ anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 340.0
 grow_vertical = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 24
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="FPSLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="FPSLabel" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "FPS: "
 vertical_alignment = 1
 
-[node name="TileCoordLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="TileCoordLabel" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Tile: (0, 0)"
 vertical_alignment = 1
 
-[node name="Control" type="Panel" parent="MarginContainer/VBoxContainer"]
+[node name="Control" type="Panel" parent="MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_i1w4r")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Control"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/VBoxContainer/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,10 +74,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Control/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/Control/MarginContainer"]
 layout_mode = 2
 
-[node name="ToggleDoorPoints" type="CheckButton" parent="MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer"]
+[node name="ToggleDoorPoints" type="CheckButton" parent="MarginContainer/MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxEmpty_267qd")
@@ -78,7 +88,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_ukr1u")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8twqd")
 text = "Door points"
 
-[node name="ToggleLootSpawns" type="CheckButton" parent="MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer"]
+[node name="ToggleLootSpawns" type="CheckButton" parent="MarginContainer/MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxEmpty_267qd")
@@ -89,7 +99,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_ukr1u")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8twqd")
 text = "Loots spawns"
 
-[node name="ToggleEnemySpawns" type="CheckButton" parent="MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer"]
+[node name="ToggleEnemySpawns" type="CheckButton" parent="MarginContainer/MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxEmpty_267qd")
@@ -100,7 +110,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_ukr1u")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8twqd")
 text = "Enemy spawns"
 
-[node name="AdvancedToggle" type="CheckButton" parent="MarginContainer/VBoxContainer"]
+[node name="AdvancedToggle" type="CheckButton" parent="MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
 theme_override_font_sizes/font_size = 24
@@ -108,7 +118,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_i1w4r")
 button_pressed = true
 text = "Advanced"
 
-[connection signal="toggled" from="MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer/ToggleDoorPoints" to="." method="_on_toggle_door_points_toggled"]
-[connection signal="toggled" from="MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer/ToggleLootSpawns" to="." method="_on_toggle_loot_spawns_toggled"]
-[connection signal="toggled" from="MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer/ToggleEnemySpawns" to="." method="_on_toggle_enemy_spawns_toggled"]
-[connection signal="toggled" from="MarginContainer/VBoxContainer/AdvancedToggle" to="." method="_on_advanced_toggle_toggled"]
+[connection signal="toggled" from="MarginContainer/MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer/ToggleDoorPoints" to="." method="_on_toggle_door_points_toggled"]
+[connection signal="toggled" from="MarginContainer/MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer/ToggleLootSpawns" to="." method="_on_toggle_loot_spawns_toggled"]
+[connection signal="toggled" from="MarginContainer/MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer/ToggleEnemySpawns" to="." method="_on_toggle_enemy_spawns_toggled"]
+[connection signal="toggled" from="MarginContainer/MarginContainer/VBoxContainer/AdvancedToggle" to="." method="_on_advanced_toggle_toggled"]
