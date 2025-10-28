@@ -6,7 +6,7 @@ class_name DebugMenu
 @onready var tile_map: TileMapLayer = get_tree().get_root().find_child("TileMapLayer", true, false)
 @onready var fps_label: Label = $MarginContainer/MarginContainer/VBoxContainer/FPSLabel
 @onready var advanced_menu: Panel = $MarginContainer/MarginContainer/VBoxContainer/Control
-@onready var advanced_toggle: CheckButton = $MarginContainer/VBoxContainer/AdvancedToggle
+@onready var advanced_toggle: CheckButton = $MarginContainer/MarginContainer/VBoxContainer/AdvancedToggle
 
 # Advanced options
 @onready var toggle_door_points: CheckButton = $MarginContainer/MarginContainer/VBoxContainer/Control/MarginContainer/VBoxContainer/ToggleDoorPoints
@@ -19,6 +19,7 @@ var view_to_world
 func _ready() -> void:
 	pass
 
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	# FPS counter
 	fps_label.text = "FPS: %s" % str(Engine.get_frames_per_second())
@@ -47,6 +48,7 @@ func get_rooms():
 	var rooms = get_tree().get_nodes_in_group("rooms")
 	return rooms
 
+@warning_ignore("unused_parameter")
 func _on_toggle_door_points_toggled(toggled_on: bool) -> void:
 	var rooms = get_rooms()
 	if rooms:
@@ -55,6 +57,7 @@ func _on_toggle_door_points_toggled(toggled_on: bool) -> void:
 				r.toggle_door_points()
 
 
+@warning_ignore("unused_parameter")
 func _on_toggle_loot_spawns_toggled(toggled_on: bool) -> void:
 	var rooms = get_rooms()
 	if rooms:
@@ -63,6 +66,7 @@ func _on_toggle_loot_spawns_toggled(toggled_on: bool) -> void:
 				r.toggle_loot_spawns()
 
 
+@warning_ignore("unused_parameter")
 func _on_toggle_enemy_spawns_toggled(toggled_on: bool) -> void:
 	var rooms = get_rooms()
 	if rooms:

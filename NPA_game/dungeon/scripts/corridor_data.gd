@@ -2,7 +2,6 @@ extends Node2D
 class_name Corridor
 
 var door_points: Array[Vector2i]
-@onready var walls: TileMapLayer = $Walls
 
 func _ready() -> void:
 	add_to_group("corridors")
