@@ -19,28 +19,32 @@ script = ExtResource("1_6bnvv")
 rooms = Array[PackedScene]([ExtResource("4_v4vhm"), ExtResource("5_phknx"), ExtResource("4_phknx"), ExtResource("5_mced1"), ExtResource("6_mced1")])
 corridors = Array[PackedScene]([ExtResource("4_gfh1l")])
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="DungeonTerrain" type="Node2D" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="DungeonTerrain"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="DungeonTerrain/ParallaxBackground"]
 motion_mirroring = Vector2(1732, 880)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Sprite2D" type="Sprite2D" parent="DungeonTerrain/ParallaxBackground/ParallaxLayer"]
 position = Vector2(107, 116)
 texture = ExtResource("8_tq5xy")
 
-[node name="StartRoom" parent="." instance=ExtResource("1_fpp86")]
+[node name="StartRoom" parent="DungeonTerrain" instance=ExtResource("1_fpp86")]
 
-[node name="Rooms" type="Node2D" parent="."]
+[node name="Rooms" type="Node2D" parent="DungeonTerrain"]
 
-[node name="Corridors" type="Node2D" parent="."]
+[node name="Corridors" type="Node2D" parent="DungeonTerrain"]
+
+[node name="CorridorWalls" type="TileMapLayer" parent="DungeonTerrain"]
+tile_set = ExtResource("12_tq5xy")
+
+[node name="Doors" type="Node2D" parent="DungeonTerrain"]
 
 [node name="player" parent="." instance=ExtResource("2_1b30c")]
 position = Vector2(111, 112)
 
 [node name="DebugHUD" parent="." instance=ExtResource("4_bo7df")]
-
-[node name="CorridorWalls" type="TileMapLayer" parent="."]
-tile_set = ExtResource("12_tq5xy")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = ExtResource("7_pqcbx")
