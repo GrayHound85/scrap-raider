@@ -1,10 +1,75 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxqy1m43on1sa"]
+[gd_scene load_steps=9 format=3 uid="uid://dxqy1m43on1sa"]
 
 [ext_resource type="Script" uid="uid://t1365o2rae7w" path="res://dungeon/objects/door.gd" id="1_7e1qb"]
 [ext_resource type="Texture2D" uid="uid://bd5dxfvvekjry" path="res://dungeon/assets/level_1_door.png" id="1_yhaoa"]
+[ext_resource type="Texture2D" uid="uid://ybfvjshifcte" path="res://dungeon/assets/door_lock.png" id="3_amdc5"]
+
+[sub_resource type="Animation" id="Animation_amdc5"]
+resource_name = "shake"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.2617994, 0.0, -0.2617994, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.255, 1.255), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jneqt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xjagt"]
+_data = {
+&"RESET": SubResource("Animation_jneqt"),
+&"shake": SubResource("Animation_amdc5")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yhaoa"]
-size = Vector2(36, 11)
+size = Vector2(36, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7e1qb"]
+size = Vector2(36, 37)
 
 [node name="Level1Door" type="StaticBody2D"]
 script = ExtResource("1_7e1qb")
@@ -12,16 +77,28 @@ script = ExtResource("1_7e1qb")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.8560673, 0.8560673, 0.85606724, 1)
 position = Vector2(15, 18)
+rotation = 3.1415927
 texture = ExtResource("1_yhaoa")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(15, 17.5)
+[node name="LockSprite" type="Sprite2D" parent="."]
+modulate = Color(0.74978, 0.74978, 0.74977994, 1)
+position = Vector2(15, 19)
+texture = ExtResource("3_amdc5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LockSprite"]
+libraries = {
+&"": SubResource("AnimationLibrary_xjagt")
+}
+
+[node name="DoorCollision" type="CollisionShape2D" parent="."]
+position = Vector2(15, 18.5)
 shape = SubResource("RectangleShape2D_yhaoa")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(15, 16.5)
-shape = SubResource("RectangleShape2D_yhaoa")
+position = Vector2(15, 17.5)
+shape = SubResource("RectangleShape2D_7e1qb")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

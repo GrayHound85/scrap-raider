@@ -143,7 +143,7 @@ func build_corridor(door1: Dictionary, corridor, door2: Dictionary = {Vector2i(-
 				corridor_walls.set_cell(all_surrounding[2], 0, Vector2i(0,0))
 			
 		# Build doors
-		if i == roundi(gen.CORRIDOR_LENGTH/2):
+		if i == roundi(gen.CORRIDOR_LENGTH/2.0):
 			var door = LEVEL_1_DOOR.instantiate()
 			doors[door] = door_key_id
 			door.door_id = door_key_id
@@ -151,6 +151,7 @@ func build_corridor(door1: Dictionary, corridor, door2: Dictionary = {Vector2i(-
 			doors_containter.add_child(door)
 			door.position = Vector2(corridor_pos) * tile_size
 			door.rotation = door_rotation
+			#door.lock_sprite.rotation = -door_rotation
 			
 		corridors_container.add_child(c)
 
