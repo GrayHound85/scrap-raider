@@ -13,7 +13,7 @@ extends Node2D
 const LEVEL_1_DOOR = preload("uid://dxqy1m43on1sa")
 
 enum gen {
-	MAX_ROOMS = 5,
+	MAX_ROOMS = 20,
 	CORRIDOR_LENGTH = 3
 }
 
@@ -143,7 +143,7 @@ func build_corridor(door1: Dictionary, corridor, door2: Dictionary = {Vector2i(-
 				corridor_walls.set_cell(all_surrounding[2], 0, Vector2i(0,0))
 			
 		# Build doors
-		if i == roundi(gen.CORRIDOR_LENGTH/2.0):
+		if i == 1:#ceil(gen.CORRIDOR_LENGTH/2.0):
 			var door = LEVEL_1_DOOR.instantiate()
 			doors[door] = door_key_id
 			door.door_id = door_key_id

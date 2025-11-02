@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cxhjnl13cjieq"]
+[gd_scene load_steps=9 format=4 uid="uid://cxhjnl13cjieq"]
 
 [ext_resource type="Script" uid="uid://nox2m5a0f3lo" path="res://dungeon/scripts/room_data.gd" id="1_sm2wj"]
 [ext_resource type="TileSet" uid="uid://b656e3oclr3tg" path="res://dungeon/assets/tilemap/floor_tiles.tres" id="2_3xnnd"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bwajy3ldatg5h" path="res://dungeon/objects/tourch.tscn" id="4_o2b1e"]
 [ext_resource type="TileSet" uid="uid://jmadttcqcruw" path="res://dungeon/assets/tilemap/wall_tiles.tres" id="5_a822h"]
 [ext_resource type="PackedScene" uid="uid://dk48bfqd704nl" path="res://dungeon/objects/door_key.tscn" id="7_o2b1e"]
+[ext_resource type="PackedScene" uid="uid://dpnv45hxxlcas" path="res://dungeon/enemies/enemy_1.tscn" id="8_a822h"]
 
 [node name="TemplateRoom" type="Node2D"]
 script = ExtResource("1_sm2wj")
@@ -61,3 +62,6 @@ tile_set = ExtResource("3_i6kb4")
 modulate = Color(0.5251013, 0.5251013, 0.5251012, 1)
 position = Vector2(111, 155)
 key_id = null
+
+[node name="Enemy1" parent="." instance=ExtResource("8_a822h")]
+position = Vector2(47, 31)

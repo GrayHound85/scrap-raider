@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpnv45hxxlcas"]
+
+[ext_resource type="Script" uid="uid://yqo4jx3xj6ek" path="res://dungeon/enemies/enemy_1.gd" id="1_nn1i7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rcajf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nn1i7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hlbqi"]
+radius = 63.0
+
+[node name="Enemy1" type="CharacterBody2D"]
+script = ExtResource("1_nn1i7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rcajf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nn1i7")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_hlbqi")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
