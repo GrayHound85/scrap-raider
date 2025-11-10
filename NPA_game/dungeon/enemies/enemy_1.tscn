@@ -10,6 +10,7 @@
 radius = 63.0
 
 [node name="Enemy1" type="CharacterBody2D"]
+z_index = 98
 script = ExtResource("1_nn1i7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
