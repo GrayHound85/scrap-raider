@@ -3,19 +3,19 @@
 [ext_resource type="Script" uid="uid://dxp8pyoyqa0hk" path="res://hideout/work_station.gd" id="1_214tk"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ax5yf"]
-size = Vector2(64, 32)
+size = Vector2(64, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_214tk"]
-size = Vector2(64, 32)
+size = Vector2(82, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qahx6"]
-size = Vector2(60, 28)
+size = Vector2(60, 17)
 
 [node name="WorkStation" type="Node2D"]
 script = ExtResource("1_214tk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(9.999999, 0)
+position = Vector2(10, -6)
 texture = SubResource("PlaceholderTexture2D_ax5yf")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -27,5 +27,5 @@ shape = SubResource("RectangleShape2D_214tk")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(10, 0)
+position = Vector2(10, -5.5)
 shape = SubResource("RectangleShape2D_qahx6")
