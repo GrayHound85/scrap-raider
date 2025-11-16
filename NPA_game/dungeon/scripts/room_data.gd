@@ -142,7 +142,7 @@ func fix_door_points(picked: Dictionary):
 	for cell in all_surrounding:
 		if cell in walls.get_used_cells():
 			corners.append(cell)
-	
+	\
 	var cell1 = corners[0]
 	var cell2 = corners[1]
 	if door_direction == Vector2i(-1, 0):

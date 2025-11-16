@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://c0dpyoe4sjsgm"]
+[gd_scene load_steps=9 format=4 uid="uid://c0dpyoe4sjsgm"]
 
 [ext_resource type="TileSet" uid="uid://b656e3oclr3tg" path="res://dungeon/assets/tilemap/floor_tiles.tres" id="1_pxqqv"]
 [ext_resource type="PackedScene" uid="uid://dtgr2tadcp5f" path="res://player/player.tscn" id="2_0hoe4"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bf3tf4m3ogmj7" path="res://hideout/work_station.tscn" id="3_0hoe4"]
 [ext_resource type="TileSet" uid="uid://jmadttcqcruw" path="res://dungeon/assets/tilemap/wall_tiles.tres" id="3_exbcu"]
 [ext_resource type="PackedScene" uid="uid://bwajy3ldatg5h" path="res://dungeon/objects/tourch.tscn" id="6_yi3il"]
+[ext_resource type="PackedScene" uid="uid://rwim4i3qdknf" path="res://hideout/portal.tscn" id="7_44wtm"]
+[ext_resource type="PackedScene" uid="uid://bwrgqex05ljdc" path="res://dungeon/dungeon_2.0.tscn" id="8_sb083"]
 
 [node name="Hideout" type="Node2D"]
 
@@ -76,3 +78,10 @@ rotation = 3.1415927
 [node name="Sprite2D5" parent="Lights" instance=ExtResource("6_yi3il")]
 position = Vector2(-245, 113)
 rotation = -3.1415925
+
+[node name="Portals" type="Node2D" parent="."]
+
+[node name="Portal" parent="Portals" instance=ExtResource("7_44wtm")]
+position = Vector2(432, -22)
+teleport_location = ExtResource("8_sb083")
+is_locked = false

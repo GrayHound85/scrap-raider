@@ -13,7 +13,7 @@ extends Node2D
 const LEVEL_1_DOOR = preload("uid://dxqy1m43on1sa")
 
 enum gen {
-	MAX_ROOMS = 5,
+	MAX_ROOMS = 20,
 	CORRIDOR_LENGTH = 3
 }
 

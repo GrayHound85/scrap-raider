@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://rwim4i3qdknf"]
+
+[ext_resource type="Script" uid="uid://dbm0ucxh4nbfv" path="res://hideout/portal.gd" id="1_cwc64"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2tilp"]
+size = Vector2(96, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwc64"]
+size = Vector2(100, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hbgw"]
+size = Vector2(136, 35.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nf5oo"]
+size = Vector2(94, 14)
+
+[node name="Portal" type="Node2D"]
+script = ExtResource("1_cwc64")
+
+[node name="PlaceholderSprite" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_2tilp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+
+[node name="LockedPortal" type="StaticBody2D" parent="."]
+
+[node name="LockedPortalCollision" type="CollisionShape2D" parent="LockedPortal"]
+shape = SubResource("RectangleShape2D_cwc64")
+
+[node name="ProximityCheck" type="Area2D" parent="."]
+
+[node name="ProximityCheck" type="CollisionShape2D" parent="ProximityCheck"]
+position = Vector2(0, 7.75)
+shape = SubResource("RectangleShape2D_7hbgw")
+
+[node name="TeleportArea" type="Area2D" parent="."]
+
+[node name="TeleportCollision" type="CollisionShape2D" parent="TeleportArea"]
+shape = SubResource("RectangleShape2D_nf5oo")
+
+[connection signal="body_entered" from="TeleportArea" to="." method="_on_teleport_area_body_entered"]
