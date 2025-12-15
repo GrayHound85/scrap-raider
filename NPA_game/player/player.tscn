@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dtgr2tadcp5f"]
+[gd_scene load_steps=14 format=3 uid="uid://dtgr2tadcp5f"]
 
 [ext_resource type="Script" uid="uid://dopwqlpit8amh" path="res://player/player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://d2a8bic4f5rv8" path="res://HUDs/main_hud.tscn" id="2_onrkg"]
@@ -69,6 +69,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_g1dw6"]
+radius = 22.0
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 99
 z_as_relative = false
@@ -93,3 +96,11 @@ zoom = Vector2(5, 5)
 position_smoothing_enabled = true
 
 [node name="MainHUD" parent="." instance=ExtResource("2_onrkg")]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_g1dw6")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

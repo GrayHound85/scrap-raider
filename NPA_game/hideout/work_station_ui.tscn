@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://o2ag4vn45o87"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_714wr"]
+bg_color = Color(0.078431375, 0.078431375, 0.078431375, 0.24313726)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a00hn"]
+bg_color = Color(0.427493, 0.42749307, 0.42749295, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_a00hn"]
+color = Color(0.24115604, 0.24115604, 0.24115604, 1)
+grow_begin = -50.0
+grow_end = -50.0
+thickness = 4
+
+[node name="WorkStationUI" type="CanvasLayer"]
+
+[node name="Panel2" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_714wr")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 41.0
+offset_top = 41.0
+offset_right = 776.0
+offset_bottom = -49.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_a00hn")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="WorkstationTitle" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Temp title"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_a00hn")

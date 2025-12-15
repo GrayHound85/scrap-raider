@@ -34,9 +34,21 @@
               "icon": "lucide-file",
               "title": "Lore - rough ideas"
             }
+          },
+          {
+            "id": "988e4fad93382a32",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.12"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.12"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -109,7 +121,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "map_design/Lore - rough ideas.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -119,7 +130,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Lore - rough ideas"
+              "title": "Backlinks"
             }
           },
           {
@@ -174,6 +185,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -182,7 +194,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "db470b1aadabc5f7",
+  "active": "988e4fad93382a32",
   "lastOpenFiles": [
     "map_design/possible_maps/original_map.jpg",
     "map_design/possible_maps/Pasted image 20250913141454.png",
