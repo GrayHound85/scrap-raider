@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bxwo00bm4ely2"]
+
+[ext_resource type="Script" uid="uid://blobg8pggdrxy" path="res://item_system/item_class.gd" id="1_3nvp4"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3nvp4"]
+size = Vector2(16, 16)
+
+[resource]
+script = ExtResource("1_3nvp4")
+item_name = "Cloth"
+item_sprite = SubResource("PlaceholderTexture2D_3nvp4")
+metadata/_custom_type_script = "uid://blobg8pggdrxy"

@@ -13,5 +13,6 @@ func _ready() -> void:
 		locked_portal_collision.disabled = true
 
 
+@warning_ignore("unused_parameter")
 func _on_teleport_area_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_packed(teleport_location)

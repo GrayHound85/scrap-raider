@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dtgr2tadcp5f"]
+[gd_scene load_steps=15 format=3 uid="uid://dtgr2tadcp5f"]
 
 [ext_resource type="Script" uid="uid://dopwqlpit8amh" path="res://player/player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://d2a8bic4f5rv8" path="res://HUDs/main_hud.tscn" id="2_onrkg"]
 [ext_resource type="Texture2D" uid="uid://b8k3ur2r6ujmc" path="res://player/assets/character_level_1.png" id="3_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://vc3n4fft4nka" path="res://HUDs/inventory/inventory.tscn" id="4_yw30f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sh265"]
 radius = 9.0
@@ -96,6 +97,9 @@ zoom = Vector2(5, 5)
 position_smoothing_enabled = true
 
 [node name="MainHUD" parent="." instance=ExtResource("2_onrkg")]
+
+[node name="Inventory" parent="." instance=ExtResource("4_yw30f")]
+visible = false
 
 [node name="Area2D" type="Area2D" parent="."]
 

@@ -43,7 +43,6 @@ tile_set = ExtResource("12_tq5xy")
 
 [node name="player" parent="." instance=ExtResource("2_1b30c")]
 position = Vector2(111, 112)
-speed = null
 
 [node name="DebugHUD" parent="." instance=ExtResource("4_bo7df")]
 

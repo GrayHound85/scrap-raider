@@ -29,7 +29,7 @@ func _ready() -> void:
 	
 
 func interact():
-	print("You have interacted with %s" % [workstation_name])
+	#print("You have interacted with %s" % [workstation_name])
 	work_station_ui.visible = true
 
 
