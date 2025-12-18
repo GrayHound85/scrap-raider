@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2a8bic4f5rv8"]
+[gd_scene load_steps=8 format=3 uid="uid://d2a8bic4f5rv8"]
 
 [ext_resource type="Texture2D" uid="uid://cgdiw0seajeg4" path="res://HUDs/assets/settingswheel.png" id="1_gxgn3"]
+[ext_resource type="FontVariation" uid="uid://clrfu0msnqxhm" path="res://HUDs/assets/ui_font_1.tres" id="2_wtn8d"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gxgn3"]
 
@@ -62,12 +63,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 130.0
-offset_top = -17.0
-offset_right = 339.0
-offset_bottom = 17.0
+offset_left = 90.0
+offset_top = -9.0
+offset_right = 394.0
+offset_bottom = 156.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("2_wtn8d")
+theme_override_font_sizes/font_size = 30
 text = "Press E to interact"
 horizontal_alignment = 1

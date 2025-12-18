@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://vc3n4fft4nka"]
+[gd_scene load_steps=6 format=3 uid="uid://vc3n4fft4nka"]
 
 [ext_resource type="Script" uid="uid://cwryq3qkb55sr" path="res://HUDs/inventory/inventory.gd" id="1_42rs6"]
+[ext_resource type="FontVariation" uid="uid://clrfu0msnqxhm" path="res://HUDs/assets/ui_font_1.tres" id="2_1wjyr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_42rs6"]
 bg_color = Color(0.078431375, 0.078431375, 0.078431375, 0.24313726)
@@ -53,10 +54,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="WorkstationTitle" type="Label" parent="MarginContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 45
+theme_override_fonts/font = ExtResource("2_1wjyr")
+theme_override_font_sizes/font_size = 50
 text = "Inventory"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2

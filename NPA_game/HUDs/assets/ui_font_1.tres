@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://clrfu0msnqxhm"]
+
+[ext_resource type="FontFile" uid="uid://67xqqs7ff8iq" path="res://HUDs/assets/VCR_OSD_MONO_1.001.ttf" id="1_ayntd"]
+
+[resource]
+base_font = ExtResource("1_ayntd")
