@@ -14,4 +14,14 @@ func is_empty() -> bool:
 func get_item_name() -> String:
 	if item_data != null:
 		return item_data.item_name
-	return "Empyt slot"
+	return "Empty slot"
+
+func get_item_quantity() -> int:
+	if item_data != null:
+		return quantity
+	return -1
+
+func get_item_id() -> int:
+	if item_data != null:
+		return item_data.item_id
+	return -1

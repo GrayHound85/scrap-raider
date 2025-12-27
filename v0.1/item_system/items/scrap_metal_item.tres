@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://c8q7ikabhltwt"]
+
+[ext_resource type="Script" uid="uid://blobg8pggdrxy" path="res://item_system/item_resouce_template.gd" id="1_6hk2h"]
+[ext_resource type="Texture2D" uid="uid://6s278itgjali" path="res://item_system/assets/scrap_metal.png" id="1_cpoje"]
+
+[resource]
+script = ExtResource("1_6hk2h")
+item_name = "Scrap Metal"
+item_sprite = ExtResource("1_cpoje")
+metadata/_custom_type_script = "uid://blobg8pggdrxy"
