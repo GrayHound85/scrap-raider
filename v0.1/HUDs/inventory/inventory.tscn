@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://vc3n4fft4nka"]
+[gd_scene load_steps=7 format=3 uid="uid://vc3n4fft4nka"]
 
 [ext_resource type="Script" uid="uid://cwryq3qkb55sr" path="res://HUDs/inventory/inventory.gd" id="1_42rs6"]
 [ext_resource type="FontVariation" uid="uid://clrfu0msnqxhm" path="res://HUDs/assets/ui_font_1.tres" id="2_1wjyr"]
@@ -12,6 +12,8 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1wjyr"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_up3ri"]
 color = Color(0.24115604, 0.24115604, 0.24115604, 1)
@@ -53,11 +55,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1wjyr")
+
 [node name="WorkstationTitle" type="Label" parent="MarginContainer/Panel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_1wjyr")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 60
 text = "Inventory"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -42,6 +42,12 @@ color = Color(0.90359825, 0.90359825, 0.9035982, 1)
 [node name="NutritionStation" parent="WorkStations" instance=ExtResource("3_0hoe4")]
 position = Vector2(86, 16)
 workstation_name = "Nutrition Station"
+upgrades = {
+1: {
+"Scrap Metal": 1,
+"Stone": 3
+}
+}
 
 [node name="RestSpace" parent="WorkStations" instance=ExtResource("3_0hoe4")]
 position = Vector2(246, 16)

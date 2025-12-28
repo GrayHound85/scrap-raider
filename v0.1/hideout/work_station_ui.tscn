@@ -1,4 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://o2ag4vn45o87"]
+[gd_scene load_steps=8 format=3 uid="uid://o2ag4vn45o87"]
+
+[ext_resource type="FontVariation" uid="uid://clrfu0msnqxhm" path="res://HUDs/assets/ui_font_1.tres" id="1_714wr"]
+[ext_resource type="Texture2D" uid="uid://cry2cartct6nl" path="res://hideout/assets/Station_level_3_icon.png" id="2_qdwan"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_714wr"]
 bg_color = Color(0.078431375, 0.078431375, 0.078431375, 0.24313726)
@@ -15,6 +18,10 @@ color = Color(0.24115604, 0.24115604, 0.24115604, 1)
 grow_begin = -50.0
 grow_end = -50.0
 thickness = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qdwan"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x1r4b"]
 
 [node name="WorkStationUI" type="CanvasLayer"]
 
@@ -54,11 +61,77 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 
 [node name="WorkstationTitle" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-theme_override_font_sizes/font_size = 45
+theme_override_fonts/font = ExtResource("1_714wr")
+theme_override_font_sizes/font_size = 60
 text = "Temp title"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_a00hn")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(160, 320)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_qdwan")
+
+[node name="VSeparator" type="VSeparator" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qdwan")
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_714wr")
+theme_override_font_sizes/font_size = 32
+text = "Here will be the text saying things like what the currect perks and the perks gained at the next level.
+
+Current perks
+1. Increased player speed
+
+Next level perks
+1. Inceased player health
+"
+autowrap_mode = 2
+
+[node name="Panel2" type="Panel" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_a00hn")
+
+[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_x1r4b")
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_714wr")
+theme_override_font_sizes/font_size = 50
+text = "Upgrade"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_x1r4b")
+
+[node name="UpgradeRequirements" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20

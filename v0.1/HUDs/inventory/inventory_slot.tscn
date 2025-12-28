@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://02ecot4sq3q"]
+[gd_scene load_steps=4 format=3 uid="uid://02ecot4sq3q"]
+
+[ext_resource type="FontVariation" uid="uid://clrfu0msnqxhm" path="res://HUDs/assets/ui_font_1.tres" id="1_87nll"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1mpk"]
 corner_radius_top_left = 20
@@ -6,8 +8,16 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gqo1r"]
-size = Vector2(120, 120)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_87nll"]
+bg_color = Color(0.3254902, 0.3254902, 0.3254902, 0.6745098)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
 
 [node name="Panel" type="Panel"]
 custom_minimum_size = Vector2(130, 130)
@@ -26,5 +36,25 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureButton" type="TextureButton" parent="CenterContainer"]
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
-texture_normal = SubResource("PlaceholderTexture2D_gqo1r")
+stretch_mode = 0
+
+[node name="ItemCountLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -40.0
+offset_right = -14.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_87nll")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_87nll")
+horizontal_alignment = 1

@@ -2,11 +2,14 @@ extends Node2D
 # Node references
 @onready var workstation_sprite: Sprite2D = $Sprite2D
 @onready var work_station_ui: CanvasLayer = $WorkStationUI
+const WORKSTATION_UPGRADE_ITEM_SLOT = preload("uid://b23pxk0i8ok44")
 
 # Exported vars
 @export var workstation_name: String = "CHANGE ME"
 @export var work_station_sprites: Array[Texture2D]
 @export var upgrades: Dictionary
+
+var current_level := 1
 
 func _ready() -> void:
 	# Checks all materials and quantities are valid
@@ -27,10 +30,30 @@ func _ready() -> void:
 	var workstation_title = work_station_ui.get_node("Panel/MarginContainer/VBoxContainer/WorkstationTitle")
 	workstation_title.text = workstation_name
 	
+	# Validate upgrades.
+	for upgrade in upgrades.values():
+		for item in upgrade.keys():
+			if item not in ItemsDatabase.items_by_name.keys():
+				push_error("--- Not valid upgrade enterd for %s ---" % [workstation_name])
+	
 
 func interact():
 	#print("You have interacted with %s" % [workstation_name])
 	work_station_ui.visible = true
+	
+	# Display upgrade requirements
+	if current_level in upgrades.keys():
+		var upgrade_requirements = work_station_ui.get_node("Panel/MarginContainer/VBoxContainer/UpgradeRequirements")
+		for child in upgrade_requirements.get_children():
+			child.queue_free()
+		for item in upgrades[current_level]:
+			var item_resource = ItemsDatabase.items_by_name[item]
+			var item_display_frame = WORKSTATION_UPGRADE_ITEM_SLOT.instantiate()
+			upgrade_requirements.add_child(item_display_frame)
+			var item_display_texture = item_display_frame.get_node("Panel/CenterContainer/ItemIcon")
+			item_display_texture.texture = item_resource.item_sprite
+		
+	
 
 
 func stop_interacting():
