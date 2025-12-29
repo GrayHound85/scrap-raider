@@ -45,7 +45,7 @@ workstation_name = "Nutrition Station"
 upgrades = {
 1: {
 "Scrap Metal": 1,
-"Stone": 3
+"Stone": 5
 }
 }
 

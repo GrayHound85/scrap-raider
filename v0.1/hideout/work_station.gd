@@ -51,6 +51,8 @@ func interact():
 			var item_display_frame = WORKSTATION_UPGRADE_ITEM_SLOT.instantiate()
 			upgrade_requirements.add_child(item_display_frame)
 			var item_display_texture = item_display_frame.get_node("Panel/CenterContainer/ItemIcon")
+			var item_count_label = item_display_frame.get_node("HBoxContainer/ItemCountLabel")
+			item_count_label.text = "0/%d" % [upgrades[current_level][item]]
 			item_display_texture.texture = item_resource.item_sprite
 		
 	
